@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unit Conversion by anshul</title>
+  <link rel="icon" href="512x512bb.jpg">
+  <script>
+    function convertUnits() {
+      // Get input values
+      var input = document.getElementById("inputValue").value;
+      var inputUnit = document.getElementById("inputUnit").value;
+      var outputUnit = document.getElementById("outputUnit").value;
+      
+      // Perform conversion
+      var result;
+      if (inputUnit === "m" && outputUnit === "km") {
+        result = input / 1000;
+      } else if (inputUnit === "km" && outputUnit === "m") {
+        result = input * 1000;
+      } else if (inputUnit === "cm" && outputUnit === "m") {
+        result = input / 100;
+      } else if (inputUnit === "m" && outputUnit === "cm") {
+        result = input * 100;
+      } else {
+        result = "Invalid conversion";
+      }
+      
+      // Display the result
+      document.getElementById("result").innerHTML = result;
+    }
+  </script>
+
+  <style>
+    *{
+      background-color: #efcccc;
+     
+    }
+    h1{
+      color: rgb(99, 96, 13);
+    }
+  </style>
+</head>
+<body>
+  <h1>Unit Conversion</h1>
+  
+  <label for="inputValue">Input Value:</label>
+  <input type="number" id="inputValue">
+  
+  <label for="inputUnit">Input Unit:</label>
+  <select id="inputUnit">
+    <option value="m">Meter</option> 
+    <option value="km">Kilometer</option>
+    <option value="cm">Centimeter</option>
+  </select>
+  
+  <label for="outputUnit">Output Unit:</label>
+  <select id="outputUnit">
+    <option value="m">Meter</option>
+    <option value="km">Kilometer</option>
+    <option value="cm">Centimeter</option>
+  </select>
+  
+  <button onclick="convertUnits()">Convert</button>
+  
+  <p id="result"></p>
+</body>
+</html>
